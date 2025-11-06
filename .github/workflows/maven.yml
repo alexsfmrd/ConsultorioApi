@@ -59,7 +59,7 @@ jobs:
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/Consultorio2
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: 12345
-      run: mvn -f ./pom.xml clean install
+      run: mvn -f ConsultorioApi/pom.xml clean install
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
 
