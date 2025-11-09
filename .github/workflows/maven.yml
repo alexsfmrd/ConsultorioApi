@@ -61,5 +61,18 @@ jobs:
           SPRING_DATASOURCE_PASSWORD: 12345
       run: mvn -f ConsultorioApi/pom.xml clean install
 
+    - name: 🐳 Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: 🏗️ Build Docker image
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mi-spring-api:latest .
+
+    - name: 🚀 Push image to Docker Hub
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/mi-spring-api:latest
+
+
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
 
