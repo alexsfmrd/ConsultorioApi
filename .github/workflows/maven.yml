@@ -68,7 +68,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: 🏗️ Build Docker image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mi-spring-api:latest .
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ConsultorioApi:latest .
 
     - name: 🚀 Push image to Docker Hub
       run: docker push ${{ secrets.DOCKER_USERNAME }}/mi-spring-api:latest
